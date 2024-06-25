@@ -1,0 +1,29 @@
+**Class:** AccountController
+
+**Description:**
+
+The AccountController class is a REST controller that handles HTTP requests for account management. It is annotated with @RestController and @RequestMapping("/api/accounts") which means that it handles HTTP requests to the "/api/accounts" URL.
+
+**Methods:**
+
+* **createAccount(Account account):** This method handles HTTP POST requests to the "/api/accounts" URL. It takes an Account object as input and saves it to the database. It returns the saved account.
+* **getAccount(Long accountId):** This method handles HTTP GET requests to the "/api/accounts/{accountId}" URL. It takes an account ID as input and retrieves the account from the database. It returns the retrieved account.
+
+**Explanation:**
+
+The AccountController class is responsible for handling HTTP requests related to account management. The createAccount() method is used to create a new account, while the getAccount() method is used to retrieve an existing account.
+
+**Example Usage:**
+
+To create a new account, you can send an HTTP POST request to the "/api/accounts" URL with the following JSON payload:
+
+```json
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+```
+
+To retrieve an existing account, you can send an HTTP GET request to the "/api/accounts/{accountId}" URL, where `{accountId}` is the ID of the account you want to retrieve.
+
+This Java code will enable the bank representative in iPYMT to approve new accounts and notify customers of their status efficiently and transparently.
