@@ -1,0 +1,33 @@
+**Class:** Account
+
+**Description:**
+
+The Account class is a JPA entity that represents an account in the database. It is annotated with @Entity, which tells JPA that it is an entity class.
+
+**Attributes:**
+
+* **id:** The ID of the account. It is annotated with @Id and @GeneratedValue(strategy=GenerationType.AUTO), which means that it is the primary key and it will be generated automatically by the database.
+* **name:** The name of the account holder.
+* **email:** The email address of the account holder.
+
+**Explanation:**
+
+The Account class represents an account in the database. It has three attributes: id, name, and email. The id attribute is the primary key of the account. The name and email attributes are used to store the name and email address of the account holder, respectively.
+
+**Example Usage:**
+
+The following code shows how to create a new Account object:
+
+```java
+Account account = new Account();
+account.setName("John Doe");
+account.setEmail("john.doe@example.com");
+```
+
+The following code shows how to save the Account object to the database:
+
+```java
+entityManager.persist(account);
+```
+
+This Java code will enable the bank representative in iPYMT to approve new accounts and notify customers of their status efficiently and transparently.
