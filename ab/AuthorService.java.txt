@@ -1,0 +1,43 @@
+**Class:** `AuthorService`
+
+**Description:**
+
+The `AuthorService` class is a service class that provides methods for managing authors in a library management system. It uses the `AuthorRepository` to perform CRUD (Create, Read, Update, Delete) operations on the database.
+
+**Methods:**
+
+* `getAllAuthors()`: This method retrieves all authors from the database.
+* `getAuthorById(Long id)`: This method retrieves an author from the database by its ID.
+* `createAuthor(Author author)`: This method creates a new author in the database.
+* `updateAuthor(Author author)`: This method updates an existing author in the database.
+* `deleteAuthor(Long id)`: This method deletes an author from the database by its ID.
+
+**Usage:**
+
+You can use this class to manage authors in a library management system. You can use the `getAllAuthors()` method to retrieve all authors from the database, the `getAuthorById(Long id)` method to retrieve an author by its ID, the `createAuthor(Author author)` method to create a new author, the `updateAuthor(Author author)` method to update an existing author, and the `deleteAuthor(Long id)` method to delete an author by its ID.
+
+**Example:**
+
+```java
+AuthorService authorService = new AuthorService();
+
+// Get all authors
+List<Author> authors = authorService.getAllAuthors();
+
+// Get an author by ID
+Author author = authorService.getAuthorById(1L);
+
+// Create a new author
+Author newAuthor = new Author();
+newAuthor.setName("Douglas Adams");
+authorService.createAuthor(newAuthor);
+
+// Update an author
+author.setName("Douglas Adams (Updated)");
+authorService.updateAuthor(author);
+
+// Delete an author
+authorService.deleteAuthor(1L);
+```
+
+This code shows how to use the `AuthorService` to manage authors in a library management system.
