@@ -1,0 +1,56 @@
+**Class:** `AuthorController`
+
+**Description:**
+
+The `AuthorController` class is a REST controller that provides endpoints for managing authors in a library management system. It uses the `AuthorService` to perform CRUD (Create, Read, Update, Delete) operations on the database.
+
+**Methods:**
+
+* `getAllAuthors()`: This method retrieves all authors from the database and returns them as a list.
+* `getAuthorById(Long id)`: This method retrieves an author from the database by its ID and returns it.
+* `createAuthor(Author author)`: This method creates a new author in the database and returns the created author.
+* `updateAuthor(Long id, Author author)`: This method updates an existing author in the database and returns the updated author.
+* `deleteAuthor(Long id)`: This method deletes an author from the database by its ID.
+
+**Usage:**
+
+You can use this class to manage authors in a library management system through a REST API. You can use the `getAllAuthors()` method to retrieve all authors, the `getAuthorById(Long id)` method to retrieve an author by its ID, the `createAuthor(Author author)` method to create a new author, the `updateAuthor(Long id, Author author)` method to update an existing author, and the `deleteAuthor(Long id)` method to delete an author by its ID.
+
+**Example:**
+
+```java
+@RestController
+@RequestMapping("/authors")
+public class AuthorController {
+
+    @Autowired
+    private AuthorService authorService;
+
+    @GetMapping
+    public List<Author> getAllAuthors() {
+        return authorService.getAllAuthors();
+    }
+
+    @GetMapping("/{id}")
+    public Author getAuthorById(@PathVariable Long id) {
+        return authorService.getAuthorById(id);
+    }
+
+    @PostMapping
+    public Author createAuthor(@RequestBody Author author) {
+        return authorService.createAuthor(author);
+    }
+
+    @PutMapping("/{id}")
+    public Author updateAuthor(@PathVariable Long id, @RequestBody Author author) {
+        return authorService.updateAuthor(author);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteAuthor(@PathVariable Long id) {
+        authorService.deleteAuthor(id);
+    }
+}
+```
+
+This code shows how to use the `AuthorController` to manage authors in a library management system through a REST API.
