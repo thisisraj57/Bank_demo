@@ -1,0 +1,22 @@
+**Class:** AccountManagementApplication
+
+**Description:**
+
+The AccountManagementApplication class is the main Spring Boot application class. It is annotated with @SpringBootApplication, which tells Spring Boot that this class is the starting point of the application.
+
+**Method:**
+
+* **main(String[] args):** This is the main method of the application. It starts the Spring Boot application by using the SpringApplication.run() method.
+
+**Explanation:**
+
+The AccountManagementApplication class is the entry point of the Spring Boot application. The @SpringBootApplication annotation is used to enable auto-configuration and component scanning. The main() method is the starting point of the application. It is responsible for bootstrapping the application and starting the Spring application context.
+
+This Java application provides the following features:
+
+* Account creation
+* Account retrieval
+* Account deletion
+* Account updation
+
+This Java code will enable the bank representative in iPYMT to approve new accounts and notify customers of their status efficiently and transparently.
