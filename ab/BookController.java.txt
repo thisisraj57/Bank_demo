@@ -1,0 +1,56 @@
+**Class:** `BookController`
+
+**Description:**
+
+The `BookController` class is a REST controller that provides endpoints for managing books in a library management system. It uses the `BookService` to perform CRUD (Create, Read, Update, Delete) operations on the database.
+
+**Methods:**
+
+* `getAllBooks()`: This method retrieves all books from the database and returns them as a list.
+* `getBookById(Long id)`: This method retrieves a book from the database by its ID and returns it.
+* `createBook(Book book)`: This method creates a new book in the database and returns the created book.
+* `updateBook(Long id, Book book)`: This method updates an existing book in the database and returns the updated book.
+* `deleteBook(Long id)`: This method deletes a book from the database by its ID.
+
+**Usage:**
+
+You can use this class to manage books in a library management system through a REST API. You can use the `getAllBooks()` method to retrieve all books, the `getBookById(Long id)` method to retrieve a book by its ID, the `createBook(Book book)` method to create a new book, the `updateBook(Long id, Book book)` method to update an existing book, and the `deleteBook(Long id)` method to delete a book by its ID.
+
+**Example:**
+
+```java
+@RestController
+@RequestMapping("/books")
+public class BookController {
+
+    @Autowired
+    private BookService bookService;
+
+    @GetMapping
+    public List<Book> getAllBooks() {
+        return bookService.getAllBooks();
+    }
+
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable Long id) {
+        return bookService.getBookById(id);
+    }
+
+    @PostMapping
+    public Book createBook(@RequestBody Book book) {
+        return bookService.createBook(book);
+    }
+
+    @PutMapping("/{id}")
+    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
+        return bookService.updateBook(book);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
+    }
+}
+```
+
+This code shows how to use the `BookController` to manage books in a library management system through a REST API.
